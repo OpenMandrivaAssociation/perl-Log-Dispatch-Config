@@ -1,6 +1,6 @@
 %define module  Log-Dispatch-Config
-%define version 1.01
-%define release 6mdk
+%define version 1.02
+%define release %mkrel 1
 %define	pdir	Log
 
 Summary: 	%{module} module for perl
@@ -10,7 +10,7 @@ Release: 	%{release}
 License: 	GPL or Artistic
 Group: 		Development/Perl
 URL:            http://search.cpan.org/search?dist=%{module}
-Source0: 	%{module}-%{version}.tar.bz2
+Source0: 	http://search.cpan.org/CPAN/authors/id/M/MI/MIYAGAWA/%{module}-%{version}.tar.bz2
 BuildArch: 	noarch
 BuildRequires:	perl-devel perl-Test-Simple >= 0.42 perl-AppConfig >= 1.52
 BuildRequires:	perl-IO-stringy perl-Log-Dispatch >= 2.11-2mdk
@@ -44,4 +44,3 @@ rm -rf %{buildroot}
 %doc Changes README
 %{perl_vendorlib}/Log/Dispatch*
 %{_mandir}/*/*
-

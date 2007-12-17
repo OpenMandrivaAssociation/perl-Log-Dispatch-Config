@@ -14,7 +14,6 @@ Source0: 	http://search.cpan.org/CPAN/authors/id/M/MI/MIYAGAWA/%{module}-%{versi
 BuildArch: 	noarch
 BuildRequires:	perl-devel perl-Test-Simple >= 0.42 perl-AppConfig >= 1.52
 BuildRequires:	perl-IO-stringy perl-Log-Dispatch >= 2.11-2mdk
-BuildRoot: 	%{_tmppath}/%{name}-buildroot
 
 %description 
 %{module} module for perl.  Log::Dispatch::Config is a subclass of

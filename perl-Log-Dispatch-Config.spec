@@ -1,6 +1,6 @@
 %define module  Log-Dispatch-Config
 %define version 1.02
-%define release %mkrel 1
+%define release %mkrel 3
 %define	pdir	Log
 
 Summary: 	%{module} module for perl

@@ -1,29 +1,31 @@
-%define module  Log-Dispatch-Config
-%define version 1.02
-%define release %mkrel 3
-%define	pdir	Log
+%define upstream_name    Log-Dispatch-Config
+%define upstream_version 1.02
 
-Summary: 	%{module} module for perl
-Name: 		perl-%{module}
-Version: 	%{version}
-Release: 	%{release}
-License: 	GPL or Artistic
+Name: 		perl-%{upstream_name}
+Version: 	%perl_convert_version %{upstream_version}
+Release: 	%mkrel 1
+
+Summary: 	Log4j for Perl
+License: 	GPL+ or Artistic
 Group: 		Development/Perl
-URL:            http://search.cpan.org/search?dist=%{module}
-Source0: 	http://search.cpan.org/CPAN/authors/id/M/MI/MIYAGAWA/%{module}-%{version}.tar.bz2
+URL:        http://search.cpan.org/search?dist=%{upstream_name}
+Source0: 	http://search.cpan.org/CPAN/authors/id/M/MI/MIYAGAWA/%{upstream_name}-%{upstream_version}.tar.bz2
+
+BuildRequires: perl(Test::Simple)  >= 0.420.0
+BuildRequires: perl(AppConfig)     >= 1.520.0
+BuildRequires: perl(IO::Stringy)
+BuildRequires: perl(Log::Dispatch) >= 2.110.0
+BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}
 BuildArch: 	noarch
-BuildRequires:	perl-devel perl-Test-Simple >= 0.42 perl-AppConfig >= 1.52
-BuildRequires:	perl-IO-stringy perl-Log-Dispatch >= 2.11-2mdk
-BuildRoot: 	%{_tmppath}/%{name}-buildroot
 
 %description 
-%{module} module for perl.  Log::Dispatch::Config is a subclass of
-Log::Dispatch and provides a way to configure Log::Dispatch object
-with configulation file (default, in AppConfig format). I mean, this
-is log4j for Perl, not with all API compatibility though.
+Log::Dispatch::Config is a subclass of Log::Dispatch and provides a way
+to configure Log::Dispatch object with configulation file (default, in
+AppConfig format). I mean, this is log4j for Perl, not with all API
+compatibility though.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 

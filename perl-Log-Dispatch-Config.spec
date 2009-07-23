@@ -8,7 +8,7 @@ Release: 	%mkrel 1
 Summary: 	Log4j for Perl
 License: 	GPL+ or Artistic
 Group: 		Development/Perl
-URL:        http://search.cpan.org/search?dist=%{upstream_name}
+URL:        http://search.cpan.org/dist/%{upstream_name}/
 Source0: 	http://search.cpan.org/CPAN/authors/id/M/MI/MIYAGAWA/%{upstream_name}-%{upstream_version}.tar.bz2
 
 BuildRequires: perl(Test::Simple)  >= 0.420.0

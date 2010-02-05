@@ -1,5 +1,5 @@
 %define upstream_name    Log-Dispatch-Config
-%define upstream_version 1.02
+%define upstream_version 1.03
 
 Name: 		perl-%{upstream_name}
 Version: 	%perl_convert_version %{upstream_version}
@@ -9,14 +9,15 @@ Summary: 	Log4j for Perl
 License: 	GPL+ or Artistic
 Group: 		Development/Perl
 URL:        http://search.cpan.org/dist/%{upstream_name}/
-Source0: 	http://search.cpan.org/CPAN/authors/id/M/MI/MIYAGAWA/%{upstream_name}-%{upstream_version}.tar.bz2
+Source0: 	http://search.cpan.org/CPAN/authors/id/M/MI/MIYAGAWA/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires: perl(Test::Simple)  >= 0.420.0
 BuildRequires: perl(AppConfig)     >= 1.520.0
 BuildRequires: perl(IO::Stringy)
 BuildRequires: perl(Log::Dispatch) >= 2.110.0
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}
+
 BuildArch: 	noarch
+BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description 
 Log::Dispatch::Config is a subclass of Log::Dispatch and provides a way
@@ -28,11 +29,11 @@ compatibility though.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-
 %{__perl} Makefile.PL INSTALLDIRS=vendor 
 %make
 
-make test
+%check
+%make test
 
 %install
 rm -rf %{buildroot}

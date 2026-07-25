@@ -2,14 +2,14 @@
 %define upstream_version 1.04
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	%{upstream_version}
+Release:	5
 
 Summary:	Log4j for Perl
 License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		https://search.cpan.org/dist/%{upstream_name}/
-Source0:	http://search.cpan.org/CPAN/authors/id/M/MI/MIYAGAWA/%{upstream_name}-%{upstream_version}.tar.gz
+URL:		https://metacpan.org/dist/Log-Dispatch-Config
+Source0:	https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA/Log-Dispatch-Config-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel

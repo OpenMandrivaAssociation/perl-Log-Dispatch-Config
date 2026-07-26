@@ -1,15 +1,13 @@
 %define upstream_name    Log-Dispatch-Config
-%define upstream_version 1.04
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	5
+Version:	1.04
+Release:	6
 
 Summary:	Log4j for Perl
 License:	GPL+ or Artistic
 Group:		Development/Perl
 URL:		https://metacpan.org/dist/Log-Dispatch-Config
-Source0:	https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA/Log-Dispatch-Config-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA/Log-Dispatch-Config-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -27,7 +25,7 @@ AppConfig format). I mean, this is log4j for Perl, not with all API
 compatibility though.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor 
@@ -59,8 +57,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 * Thu Jul 23 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 1.20.0-1mdv2010.0
 + Revision: 398793
 - rebuild
-- using %%perl_convert_version
-- fixed summary, license, buildrequires fields
+- using %1.04 fixed summary, license, buildrequires fields
 
 * Wed Jul 23 2008 Thierry Vignaud <tv@mandriva.org> 1.02-3mdv2009.0
 + Revision: 241649

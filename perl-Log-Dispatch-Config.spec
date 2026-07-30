@@ -2,7 +2,7 @@
 %define upstream_version 1.04
 Name:		perl-%{upstream_name}
 Version:	1.04
-Release:	3
+Release:	4
 
 Summary:	Log4j for Perl
 License:	GPL+ or Artistic
